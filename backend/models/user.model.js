@@ -1,41 +1,45 @@
 import mongoose from "mongoose";
 
-const postSchema=mongoose.Schema({
-    userId:{
-
-    },
-    body:{
+const UserSchema=mongoose.Schema({
+    name:{
         type:String,
-        requires:true
+        required:true;
     },
-    likes:{
-        type:Number,
-        default:0
-    },
-    createdAt:{
-        type:Date,
-        requires:Date.now
-    },
-    updatedAt:{
-        type:Date,
-        requires:Date.now
-    },
-    media:{
+    username:{
         type:String,
-        default:''
+        requires:true,
+        unique:true
+    },
+    email:{
+        type:String,
+        requires:true,
+        unique:true
     },
     active:{
         type:Boolean,
         default:true
     },
-    fileType:{
-         type:String,
+    password:{
+        type:String,
+        required:true
+    },
+    pofilePicture:{
+        type:String,
+        required:true
+    },
+    createdAt:{
+        type:Date,
+        requires:Date.now
+    },
+    
+    token:{
+        type:String,
         default:''
     }
 
 
 });
 
-const Post=mongoose.model("Post",postSchema)
+const User=mongoose.model("User",UserSchema)
 
-export default Post;
+export default User;

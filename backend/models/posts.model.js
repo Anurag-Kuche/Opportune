@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
+import User from "./user.model";
 
 const postSchema=mongoose.Schema({
     userId:{
-
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
     },
     body:{
         type:String,
