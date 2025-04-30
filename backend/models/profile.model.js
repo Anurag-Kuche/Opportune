@@ -15,4 +15,4 @@ const educationSchema=new mongoose.Schema({
     }
 });
 
-const work
+const workSchema=new mongoose.
